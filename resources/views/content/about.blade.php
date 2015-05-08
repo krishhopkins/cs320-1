@@ -3,9 +3,13 @@
 @section('content')
 
 <div class="container">
-<h2> About DB : The MMO </h2>
 
-<img src="{{ asset('img/logo.png') }}" style="display: block; margin-left: auto; margin-right: auto;"></img>
+<img src="{{ asset('resources/logo.png') }}" align="left">
+<br />
+<br />
+<h1> DB : The MMO </h1>
+<br/>
+<br/>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -13,6 +17,13 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </s>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 
     <!-- 1jQuery Version 1.11.1 -->
