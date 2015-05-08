@@ -5,7 +5,7 @@
 <div class="container">
 <h2> About DB : The MMO </h2>
 
-<img src = "{{ asset('cache/logo.png') }}" style="display: block; margin-left: auto; margin-right: auto;"></img>
+<img src="{{ asset('img/logo.png') }}" style="display: block; margin-left: auto; margin-right: auto;"></img>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
