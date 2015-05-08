@@ -1,45 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('app')
 
-<head>
+@section('content')
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MMORPG</title>
-
-    <link href="{{ asset('/css/cs/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/cs/custom.css') }}" rel="stylesheet">
-
-</head>
-<body>
     <!-- Page Content -->
     <div class="container">
-  Create a new Character
-  <form role="form">
+  <h1>Create a new character</h1>
+  <form role="form" method="POST" action="{{url('characters')}}">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group">
-      <label for="email">Nickname:</label>
-      <input type="email" style="width: 200px;" width=class="form-control" id="email" placeholder="nickname">
+      <label for="nickname">Nickname:</label>
+      <input type="text" style="width: 200px;" class="form-control" name="nickname" id="nickname" placeholder="nickname">
     </div>
     <div class="form-group">
-      <label for="pwd">Class:</label>
-      <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select Class
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Warrior</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Monk</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Healer</a></li>
-    </ul>
-  </div>
-    </div>
-    <button type="submit" class="btn btn-default">Create Character</button>
-  </form>
+  <label for="class-type">Class:</label>
+   <label class="checkbox-inline">
+      <input type="radio" name="class-type" id="class-type"
+         value="1" checked> Warrior
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="class-type" id="class-type" 
+         value="2"> Mage
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="class-type" id="class-type" 
+         value="3"> Monk
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="class-type" id="class-type" 
+         value="4"> Healer
+   </label>
+   <div class="form-group">
+   <label for="stats">Stats: </label>      @foreach($st as $i) {{ $i }} @endforeach
 </div>
-    <!-- /.container -->
+    <!-- insecure - fix later -->
+    <?php $j = 0 ?>
+    @foreach($st as $i)
+    <input type="hidden" name="st{{$j++}}" value="{{ $i }}">
+    @endforeach
+    <button type="submit" class="btn btn-default">create new character</button>
 
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+@endsection
